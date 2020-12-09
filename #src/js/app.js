@@ -22,8 +22,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	initMap();
 	tabs();
 	slider();
-	modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close');
-	modals('.btn-order', '#order', '.overlay', '#order .modal__close');
+	modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
+	modals('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	catalog();
 	align('.catalog-item__subtitle');
 	forms();

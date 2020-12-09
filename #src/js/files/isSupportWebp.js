@@ -13,7 +13,7 @@ function testWebp () {
 		if (support == true) {
 			document.querySelector('body').classList.add('_webp');
 		} else {
-			document.querySelector('body').classList.add('no-webp');
+			document.querySelector('body').classList.add('_no-webp');
 		}
 	});
 }

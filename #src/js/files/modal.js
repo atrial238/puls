@@ -1,16 +1,18 @@
-const modals = (targetSelector, modalSelector, overlaySelector, closeSelector) => {
+const modals = (targetSelector, modalSelector, overlaySelector, closeSelector, pageUpSelector) => {
 
 	const trigger = document.querySelectorAll(targetSelector),
 			  modal = document.querySelector(modalSelector),
 			  overlay = document.querySelector(overlaySelector),
 			  close = document.querySelector(closeSelector),
-			  scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+			  scrollWidth = window.innerWidth - document.documentElement.clientWidth,
+			  pageUp = document.querySelector(pageUpSelector);
 
 	function openModal() {
 		overlay.style.display = 'block';
 		modal.style.display = 'block';
 		document.body.style.overflow = 'hidden';
 		document.body.style.marginRight = `${scrollWidth}px`;
+		pageUp.style.marginRight = `${scrollWidth}px`;
 	}
 
 	function closeModal() {
@@ -18,6 +20,7 @@ const modals = (targetSelector, modalSelector, overlaySelector, closeSelector) =
 		modal.style.display = 'none';
 		document.body.style.overflow = '';
 		document.body.style.marginRight = '';
+		pageUp.style.marginRight = `unset`;
 	}
 
 	trigger.forEach(item => {

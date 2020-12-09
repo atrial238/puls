@@ -211,10 +211,9 @@ function fontsStyle() {
 	let file_content = fs.readFileSync(source_folder + '/scss/service/fonts.scss');
 	if (file_content == '') {
 		
-		fs.writeFile(source_folder + '/scss/fonts.scss', '', cb);
+		fs.writeFile(source_folder + '/scss/service/fonts.scss', '', cb);
 		return fs.readdir(path.build.fonts, function (err, items) {
 			if (items) {
-				
 				let c_fontname;
 				for (var i = 0; i < items.length; i++) {
 					let fontname = items[i].split('.');

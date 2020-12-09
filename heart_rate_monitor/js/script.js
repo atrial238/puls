@@ -131,8 +131,8 @@ window.addEventListener('DOMContentLoaded', () => {
 	Object(_files_map__WEBPACK_IMPORTED_MODULE_2__["default"])();
 	Object(_files_tabs__WEBPACK_IMPORTED_MODULE_3__["default"])();
 	Object(_files_tiny_slider__WEBPACK_IMPORTED_MODULE_4__["slider"])();
-	Object(_files_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close');
-	Object(_files_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('.btn-order', '#order', '.overlay', '#order .modal__close');
+	Object(_files_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
+	Object(_files_modal__WEBPACK_IMPORTED_MODULE_5__["default"])('.btn-order', '#order', '.overlay', '#order .modal__close', '.pageup');
 	Object(_files_catalog__WEBPACK_IMPORTED_MODULE_6__["default"])();
 	Object(_files_alignTitle__WEBPACK_IMPORTED_MODULE_7__["default"])('.catalog-item__subtitle');
 	Object(_files_form__WEBPACK_IMPORTED_MODULE_8__["default"])();
@@ -274,7 +274,7 @@ function forms () {
 			statusPost = document.createElement('div'),
 			informMessageArray = {
 			loading: 'загрузка...',
-			success: "Мы скоро свяжемся с Вами",
+			success: "Мы свяжемся с Вами в ближайшее время",
 			failure: 'Что-то пошло не так'
 	  };
 
@@ -315,7 +315,9 @@ allforms.forEach(form => {
 		allInputsThisForm.forEach(input => {
 
 			if(input.classList.contains('_req')){
-				 if(!input.value || input.value == input.getAttribute('data-value') ){
+				 if(!input.value || input.value == input.getAttribute('data-value') ||
+					  input.value == 'Введите ваше имя' ||
+					  input.value == 'Введите номер Вашего телефона'){
 
 					if(input.getAttribute('name') == 'name'){
 						input.style.color = 'red';
@@ -481,7 +483,7 @@ function testWebp () {
 		if (support == true) {
 			document.querySelector('body').classList.add('_webp');
 		} else {
-			document.querySelector('body').classList.add('no-webp');
+			document.querySelector('body').classList.add('_no-webp');
 		}
 	});
 }
@@ -674,19 +676,21 @@ const maskForNumberPhone  = (selector) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-const modals = (targetSelector, modalSelector, overlaySelector, closeSelector) => {
+const modals = (targetSelector, modalSelector, overlaySelector, closeSelector, pageUpSelector) => {
 
 	const trigger = document.querySelectorAll(targetSelector),
 			  modal = document.querySelector(modalSelector),
 			  overlay = document.querySelector(overlaySelector),
 			  close = document.querySelector(closeSelector),
-			  scrollWidth = window.innerWidth - document.documentElement.clientWidth;
+			  scrollWidth = window.innerWidth - document.documentElement.clientWidth,
+			  pageUp = document.querySelector(pageUpSelector);
 
 	function openModal() {
 		overlay.style.display = 'block';
 		modal.style.display = 'block';
 		document.body.style.overflow = 'hidden';
 		document.body.style.marginRight = `${scrollWidth}px`;
+		pageUp.style.marginRight = `${scrollWidth}px`;
 	}
 
 	function closeModal() {
@@ -694,6 +698,7 @@ const modals = (targetSelector, modalSelector, overlaySelector, closeSelector) =
 		modal.style.display = 'none';
 		document.body.style.overflow = '';
 		document.body.style.marginRight = '';
+		pageUp.style.marginRight = `unset`;
 	}
 
 	trigger.forEach(item => {

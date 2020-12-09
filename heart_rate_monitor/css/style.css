@@ -1,24 +1,24 @@
 @font-face {
-  font-family: "MuseoSansCyrl";
+  font-family: "MuseoSansCyrl-300";
   font-display: swap;
   src: url("../fonts/MuseoSansCyrl-300.woff") format("woff"), url("../fonts/MuseoSansCyrl-300.woff2") format("woff2"), url("../fonts/MuseoSansCyrl-300.ttf") format("ttf"), url("../fonts/MuseoSansCyrl-300.eot") format("eot");
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MuseoSansCyrl";
+  font-family: "MuseoSansCyrl500Regular";
   font-display: swap;
   src: url("../fonts/MuseoSansCyrl500Regular.woff") format("woff"), url("../fonts/MuseoSansCyrl500Regular.woff2") format("woff2"), url("../fonts/MuseoSansCyrl500Regular.ttf") format("ttf"), url("../fonts/MuseoSansCyrl500Regular.eot") format("eot");
-  font-weight: 500;
+  font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "MuseoSansCyrl";
+  font-family: "MuseoSansCyrl700Regular";
   font-display: swap;
   src: url("../fonts/MuseoSansCyrl700Regular.woff") format("woff"), url("../fonts/MuseoSansCyrl700Regular.woff2") format("woff2"), url("../fonts/MuseoSansCyrl700Regular.ttf") format("ttf"), url("../fonts/MuseoSansCyrl700Regular.eot") format("eot");
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1703,9 +1703,11 @@ textarea.input {
   }
   .modal {
     width: 320px;
+    min-height: unset;
   }
   .modal__close {
     right: 5px;
+    top: 5px;
   }
   .feed-form_mt25 {
     width: 230px;

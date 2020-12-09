@@ -309,9 +309,10 @@
             }
         }
     .modal {
-        width: 320px;
+		  width: 320px;
+		  min-height: unset;
         &__close {
-            right: 5px;
+            right: 5px; top: 5px;
         }
     }
     .feed-form {

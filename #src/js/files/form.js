@@ -6,7 +6,7 @@ function forms () {
 			statusPost = document.createElement('div'),
 			informMessageArray = {
 			loading: 'загрузка...',
-			success: "Мы скоро свяжемся с Вами",
+			success: "Мы свяжемся с Вами в ближайшее время",
 			failure: 'Что-то пошло не так'
 	  };
 
@@ -47,7 +47,9 @@ allforms.forEach(form => {
 		allInputsThisForm.forEach(input => {
 
 			if(input.classList.contains('_req')){
-				 if(!input.value || input.value == input.getAttribute('data-value') ){
+				 if(!input.value || input.value == input.getAttribute('data-value') ||
+					  input.value == 'Введите ваше имя' ||
+					  input.value == 'Введите номер Вашего телефона'){
 
 					if(input.getAttribute('name') == 'name'){
 						input.style.color = 'red';
