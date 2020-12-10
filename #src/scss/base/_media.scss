@@ -85,10 +85,11 @@
     }
     .button {
         font-size: 14px;
-        width: 125px;
+		  width: auto;
+		  padding: 0 10px;
        
         &_main {
-            width: 180px;
+            width: auto;
             height: 35px;
 				font-size: 12px;
 				
@@ -118,7 +119,6 @@
     }
     .privilege {
         &__wrapper{
-            flex-direction: column;
             margin: 29px auto 0 auto;
             align-items: center;
         }

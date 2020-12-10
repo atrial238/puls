@@ -177,7 +177,7 @@ function align (elemSelector) {
 			});
 		}else {
 			elem.forEach(title => {
-				title.style.height = 'unset';
+				title.style.height = 'auto';
 			});
 		}
 	 }
@@ -240,7 +240,7 @@ function footer() {
 
 	function changefooter() {
 
-		if(document.documentElement.clientWidth >  767.98) {
+		if(window.innerWidth > 767.98) {
 			footerMbile.style.display = 'none';
 			footer.style.display = 'block';
 			
@@ -698,7 +698,7 @@ const modals = (targetSelector, modalSelector, overlaySelector, closeSelector, p
 		modal.style.display = 'none';
 		document.body.style.overflow = '';
 		document.body.style.marginRight = '';
-		pageUp.style.marginRight = `unset`;
+		pageUp.style.marginRight = '';
 	}
 
 	trigger.forEach(item => {

@@ -20,7 +20,7 @@ const modals = (targetSelector, modalSelector, overlaySelector, closeSelector, p
 		modal.style.display = 'none';
 		document.body.style.overflow = '';
 		document.body.style.marginRight = '';
-		pageUp.style.marginRight = `unset`;
+		pageUp.style.marginRight = '';
 	}
 
 	trigger.forEach(item => {

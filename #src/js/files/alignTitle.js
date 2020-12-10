@@ -22,7 +22,7 @@ function align (elemSelector) {
 			});
 		}else {
 			elem.forEach(title => {
-				title.style.height = 'unset';
+				title.style.height = 'auto';
 			});
 		}
 	 }

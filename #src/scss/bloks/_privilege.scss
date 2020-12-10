@@ -17,10 +17,10 @@
     &__items {
 		  flex: 0 1 26%;
 		  max-width: 26%;
+		  
 		  @media (max-width: 767px) {
 			 max-width: 100%;
 			 flex: 1 1 100%;
-			 
 		  }
 
         img {

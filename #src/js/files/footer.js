@@ -5,7 +5,7 @@ function footer() {
 
 	function changefooter() {
 
-		if(document.documentElement.clientWidth >  767.98) {
+		if(window.innerWidth > 767.98) {
 			footerMbile.style.display = 'none';
 			footer.style.display = 'block';
 			

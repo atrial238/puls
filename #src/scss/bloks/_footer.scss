@@ -3,7 +3,7 @@
 	 &__wrapper {
 		height: 630px;
 		@media (max-width: $md3+px) {
-		  height: unset;
+		  height: auto;
 		}
 	 }
     &__info {
