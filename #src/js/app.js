@@ -1,4 +1,4 @@
-
+'use strict';
 import ibg from './files/imageToBackground';
 import testWebp from './files/isSupportWebp';
 import initMap from './files/map';
@@ -14,12 +14,11 @@ import footer from './files/footer';
 
 
 
-window.addEventListener('DOMContentLoaded', () => {
-	'use strict';
+
+	
 
 	ibg();
 	testWebp();
-	initMap();
 	tabs();
 	slider();
 	modals('.btn-consultation', '#consultation', '.overlay', '#consultation .modal__close', '.pageup');
@@ -30,5 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
 	maskForNumberPhone('[name = phone]');
 	smoothScrolling('.link');
 	footer();
+	initMap();
 
-});

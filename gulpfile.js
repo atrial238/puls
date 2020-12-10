@@ -21,6 +21,7 @@ const {parallel, watch, src, dest, series, gulp} = require('gulp'),
 	fonter          = require('gulp-fonter'),
 	fs              = require('fs'),
 	newer           = require('gulp-newer'),
+	uglify          = require('gulp-uglify-es'),
 	webpack			 = require("webpack-stream"),
 	path = {
 		build: {
@@ -122,11 +123,19 @@ function scriptDev() {
 }
 
 function scriptProd () {
-	return src(path.src.js)
+	src(path.src.js)
 	.pipe(webpack({
 		mode: 'production',
 		output: {
-			filename: 'script.min.js'
+			 filename: 'script.min.js'
+		}
+	}))
+	.pipe(dest(path.build.js));
+return src(path.src.js)
+	.pipe(webpack({
+		mode: 'production',
+		output: {
+			filename: 'scriptIE.min.js'
 		},
 		module: {
 			rules: [
