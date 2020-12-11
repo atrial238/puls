@@ -12,7 +12,9 @@ import maskForNumberPhone from './files/maskForNumberPhone';
 import {smoothScrolling} from './files/scrolling';
 import footer from './files/footer';
 
-var isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
+var isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent),
+		scriptMap = document.createElement('script'),
+		mainBody = document.querySelector('body');
 
 	ibg();
 	testWebp();
@@ -27,7 +29,11 @@ var isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone
 	smoothScrolling('.link');
 	footer();
 	if(!isMobile){
-		initMap();
+		scriptMap.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD3QtL2IP05dPUR8aqsAIcooTjiyO8ay3w';
+		mainBody.appendChild(scriptMap);
+		scriptMap.onload = function(){
+			initMap();
+		};	
 	}
 	
 

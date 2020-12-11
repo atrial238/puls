@@ -2,7 +2,7 @@ window.addEventListener('DOMContentLoaded', function()  {
 
 	var 	mainBody = document.querySelector('body'),
 			scriptIE = document.createElement('script'),
-			scriptMap = document.createElement('script'),
+			
 			scriptMain = document.createElement('script'),
 			footer = document.querySelector('.footer'),
 			footerMbile = document.querySelector('.footer-mobile'),
@@ -19,8 +19,6 @@ window.addEventListener('DOMContentLoaded', function()  {
 		footerMbile.style.display = 'block';
 		footer.style.display = 'none';
 	}else{
-		scriptMap.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyD3QtL2IP05dPUR8aqsAIcooTjiyO8ay3w');
-		mainBody.appendChild(scriptMap);
 		footerMbile.style.display = 'none';
 		footer.style.display = 'block';
 	}
@@ -31,9 +29,3 @@ window.addEventListener('DOMContentLoaded', function()  {
 		mainBody.appendChild(scriptMain);
 	}
 });
-
-	
-
-
-
-
