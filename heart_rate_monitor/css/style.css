@@ -1559,6 +1559,13 @@ textarea.input {
   }
 }
 
+@media (max-width: 992px) {
+  .pageup {
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
 @media (max-width: 991.98px) {
   ._container {
     max-width: 750px;
@@ -1651,21 +1658,12 @@ textarea.input {
     padding: 0 10px;
   }
 
-  .footer__wrapper {
-    height: auto;
-  }
-
   .footer__info {
     position: static;
   }
 
   .footer__close {
     display: none;
-  }
-
-  .pageup {
-    bottom: 20px;
-    right: 20px;
   }
 }
 

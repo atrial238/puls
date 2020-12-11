@@ -12,10 +12,7 @@ import maskForNumberPhone from './files/maskForNumberPhone';
 import {smoothScrolling} from './files/scrolling';
 import footer from './files/footer';
 
-
-
-
-	
+var isMobile = /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent);
 
 	ibg();
 	testWebp();
@@ -29,5 +26,8 @@ import footer from './files/footer';
 	maskForNumberPhone('[name = phone]');
 	smoothScrolling('.link');
 	footer();
-	initMap();
+	if(!isMobile){
+		initMap();
+	}
+	
 
